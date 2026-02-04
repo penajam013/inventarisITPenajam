@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>PERANGKAT TI</title> 
+  <title>PENAJAM APLIKASI</title>
+
   <!-- Favicon -->
   <link rel="icon" href="https://img.icons8.com/?size=100&id=R73ddSpsyacY&format=png&color=000000" type="image/png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-  <body>
-    <iframe src="https://script.google.com/macros/s/AKfycbw5FtUHf8i_RaCPorUpXmup4u-ZjgxViAW4VJYeHFPF-9M38W4720bN9uvcy0Bs9QixOw/exec"
-  width="100%"
-      height="100%"
-      allowfullscreen="true"
-      style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
-    <script>
-      window.onload = function() {
-        document.queryselector('iframe').requestFullscreen().catch((err) => {
-          console.error('Error attempting to enable full-screen mode: ${err.message)');
+
+<body style="margin:0">
+
+  <iframe
+    id="appFrame"
+    src="https://script.google.com/macros/s/AKfycbxzIhbigXij1UYMXhoOimU6CCGZdr38KMvsGJbdlJnh7fEX-vcrqVlRylmwUEwdsaijIg/exec"
+    style="position:fixed;top:0;left:0;width:100%;height:100%;border:none;"
+    allowfullscreen>
+  </iframe>
+
+  <script>
+    function goFullscreen() {
+      const iframe = document.querySelector('#appFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen().catch(err => {
+          console.warn('Fullscreen ditolak browser:', err.message);
         });
-      };
-    </script>
-      </body>
+      }
+    }
+  </script>
+
+</body>
 </html>
+
